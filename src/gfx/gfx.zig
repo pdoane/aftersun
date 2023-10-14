@@ -211,7 +211,7 @@ pub fn init(state: *game.GameState) !void {
         &gpu.BindGroup.Descriptor.init(.{
             .layout = state.pipeline_default.getBindGroupLayout(0),
             .entries = &.{
-                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_default, 0, @sizeOf(UniformBufferObject)),
+                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_default, 0, @sizeOf(UniformBufferObject), 0),
                 gpu.BindGroup.Entry.textureView(1, state.diffusemap.view_handle),
                 gpu.BindGroup.Entry.sampler(2, state.diffusemap.sampler_handle),
             },
@@ -222,7 +222,7 @@ pub fn init(state: *game.GameState) !void {
         &gpu.BindGroup.Descriptor.init(.{
             .layout = state.pipeline_diffuse.getBindGroupLayout(0),
             .entries = &.{
-                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_default, 0, @sizeOf(UniformBufferObject)),
+                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_default, 0, @sizeOf(UniformBufferObject), 0),
                 gpu.BindGroup.Entry.textureView(1, state.diffusemap.view_handle),
                 gpu.BindGroup.Entry.textureView(2, state.palettemap.view_handle),
                 gpu.BindGroup.Entry.sampler(3, state.diffusemap.sampler_handle),
@@ -234,7 +234,7 @@ pub fn init(state: *game.GameState) !void {
         &gpu.BindGroup.Descriptor.init(.{
             .layout = state.pipeline_height.getBindGroupLayout(0),
             .entries = &.{
-                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_default, 0, @sizeOf(UniformBufferObject)),
+                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_default, 0, @sizeOf(UniformBufferObject), 0),
                 gpu.BindGroup.Entry.textureView(1, state.heightmap.view_handle),
                 gpu.BindGroup.Entry.textureView(2, state.diffusemap.view_handle),
                 gpu.BindGroup.Entry.sampler(3, state.heightmap.sampler_handle),
@@ -246,7 +246,7 @@ pub fn init(state: *game.GameState) !void {
         &gpu.BindGroup.Descriptor.init(.{
             .layout = state.pipeline_default.getBindGroupLayout(0),
             .entries = &.{
-                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_default, 0, @sizeOf(UniformBufferObject)),
+                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_default, 0, @sizeOf(UniformBufferObject), 0),
                 gpu.BindGroup.Entry.textureView(1, state.lightmap.view_handle),
                 gpu.BindGroup.Entry.sampler(2, state.lightmap.sampler_handle),
             },
@@ -257,7 +257,7 @@ pub fn init(state: *game.GameState) !void {
         &gpu.BindGroup.Descriptor.init(.{
             .layout = state.pipeline_environment.getBindGroupLayout(0),
             .entries = &.{
-                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_environment, 0, @sizeOf(EnvironmentUniformObject)),
+                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_environment, 0, @sizeOf(EnvironmentUniformObject), 0),
                 gpu.BindGroup.Entry.textureView(1, state.height_output.view_handle),
                 gpu.BindGroup.Entry.sampler(2, state.height_output.sampler_handle),
                 gpu.BindGroup.Entry.textureView(3, state.reverse_height_output.view_handle),
@@ -270,7 +270,7 @@ pub fn init(state: *game.GameState) !void {
         &gpu.BindGroup.Descriptor.init(.{
             .layout = state.pipeline_diffuse.getBindGroupLayout(0),
             .entries = &.{
-                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_default, 0, @sizeOf(UniformBufferObject)),
+                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_default, 0, @sizeOf(UniformBufferObject), 0),
                 gpu.BindGroup.Entry.textureView(1, state.height_output.view_handle),
                 gpu.BindGroup.Entry.textureView(2, state.diffuse_output.view_handle),
                 gpu.BindGroup.Entry.sampler(3, state.height_output.sampler_handle),
@@ -282,7 +282,7 @@ pub fn init(state: *game.GameState) !void {
         &gpu.BindGroup.Descriptor.init(.{
             .layout = state.pipeline_default.getBindGroupLayout(0),
             .entries = &.{
-                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_default, 0, @sizeOf(UniformBufferObject)),
+                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_default, 0, @sizeOf(UniformBufferObject), 0),
                 gpu.BindGroup.Entry.textureView(1, state.glow_output.view_handle),
                 gpu.BindGroup.Entry.sampler(2, state.glow_output.sampler_handle),
             },
@@ -293,7 +293,7 @@ pub fn init(state: *game.GameState) !void {
         &gpu.BindGroup.Descriptor.init(.{
             .layout = state.pipeline_default.getBindGroupLayout(0),
             .entries = &.{
-                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_default, 0, @sizeOf(UniformBufferObject)),
+                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_default, 0, @sizeOf(UniformBufferObject), 0),
                 gpu.BindGroup.Entry.textureView(1, state.bloom_h_output.view_handle),
                 gpu.BindGroup.Entry.sampler(2, state.bloom_h_output.sampler_handle),
             },
@@ -304,7 +304,7 @@ pub fn init(state: *game.GameState) !void {
         &gpu.BindGroup.Descriptor.init(.{
             .layout = state.pipeline_final.getBindGroupLayout(0),
             .entries = &.{
-                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_final, 0, @sizeOf(FinalUniformObject)),
+                gpu.BindGroup.Entry.buffer(0, state.uniform_buffer_final, 0, @sizeOf(FinalUniformObject), 0),
                 gpu.BindGroup.Entry.textureView(1, state.diffuse_output.view_handle),
                 gpu.BindGroup.Entry.sampler(2, state.diffuse_output.sampler_handle),
                 gpu.BindGroup.Entry.textureView(3, state.environment_output.view_handle),

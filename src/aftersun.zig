@@ -37,6 +37,11 @@ const Prefabs = @import("ecs/prefabs/prefabs.zig");
 
 pub const App = @This();
 
+pub const mach_core_options = core.ComptimeOptions{
+    .use_wgpu = false,
+    .use_dgpu = true,
+};
+
 timer: core.Timer,
 
 pub var state: *GameState = undefined;
